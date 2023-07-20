@@ -1,6 +1,6 @@
 @keyframes fade-in-bck{0%{transform:translateZ(80px);opacity:0}100%{transform:translateZ(0);opacity:1}}
-@keyframes slide-in-right{0%{transform:translateX(75px);opacity:.5}100%{transform:translateX(0);opacity:1}}
-@keyframes slide-in-left{0%{transform:translateX(-75px);opacity:.5}100%{transform:translateX(0);opacity:1}}
+@keyframes slide-in-right{0%{transform:translateX(200px);opacity:.5}100%{transform:translateX(0);opacity:1}}
+@keyframes slide-in-left{0%{transform:translateX(-200px);opacity:1}100%{transform:translateX(0);opacity:1}}
 
 .navbar {
     overflow: hidden;
@@ -150,7 +150,7 @@ ul, li {
     cursor: pointer;
 }
 
-.useraside { display: flex; }
+.useraside { display: flex; user-select: none; }
 
 .hidden { display: none; }
 
@@ -159,28 +159,34 @@ ul, li {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    padding: 0 2rem;
+    /* padding: 0 2rem; */
     background-color: rgb(240, 240, 240);
     height: 75px;
     animation:slide-in-right .5s cubic-bezier(.25,.46,.45,.94) both
 }
 
-.userpopup > span:first-child {
+.popuptext {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+}
+
+.popuptext > span:first-child {
     font-weight: 500;
 }
 
-.userpopup > span:last-child {
+.popuptext > span:last-child {
     font-size: 15px;
 }
 
 .logoutbtn {
-    background-color: rgb(255, 104, 104);
+    background-color: rgb(199, 199, 199);
     cursor: pointer;
     height: 75px;
     display: flex;
     align-items: center;
     padding: 0 1rem;
+    transition: all 1s;
     animation:slide-in-right .5s cubic-bezier(.25,.46,.45,.94) both
 }
 

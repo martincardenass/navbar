@@ -48,33 +48,33 @@ const Navbar = () => {
             </>
           )}
           {user && (
-            <aside className={styles.useraside}>
-              <div
-                className={styles.useraside}
-                onMouseEnter={() => setPopup(!popup)}
-                onMouseLeave={() => setPopup(false)}
+            <aside
+              onMouseLeave={() => setPopup(false)}
+              onMouseEnter={() => setPopup(!popup)}
+              className={styles.useraside}
+            >
+              <section
+                className={popup ? styles.navuserfocused : styles.navuser}
               >
-                <section
-                  className={popup ? styles.navuserfocused : styles.navuser}
-                >
-                  <img
-                    src="https://i.imgur.com/0Mpak8Z.png"
-                    alt="Profile picture"
-                    width={50}
-                    style={{ borderRadius: '50%' }}
-                  />
-                </section>
-                <section className={popup ? styles.userpopup : styles.hidden}>
+                <img
+                  src="https://i.imgur.com/0Mpak8Z.png"
+                  alt="Profile picture"
+                  width={50}
+                  style={{ borderRadius: '50%' }}
+                />
+              </section>
+              <section className={popup ? styles.userpopup : styles.hidden}>
+                <section className={styles.popuptext}>
                   <span>Welcome, Martin</span>
                   <span>See profile</span>
                 </section>
-              </div>
-              <section
-                onMouseEnter={() => setToggleDoor(!toggleDoor)}
-                onMouseLeave={() => setToggleDoor(false)}
-                className={styles.logoutbtn}
-              >
-                <span>{door}</span>
+                <section
+                  onMouseEnter={() => setToggleDoor(!toggleDoor)}
+                  onMouseLeave={() => setToggleDoor(false)}
+                  className={styles.logoutbtn}
+                >
+                  <span>{door}</span>
+                </section>
               </section>
             </aside>
           )}
