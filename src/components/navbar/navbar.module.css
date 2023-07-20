@@ -1,0 +1,226 @@
+@keyframes fade-in-bck{0%{transform:translateZ(80px);opacity:0}100%{transform:translateZ(0);opacity:1}}
+@keyframes slide-in-right{0%{transform:translateX(75px);opacity:.5}100%{transform:translateX(0);opacity:1}}
+@keyframes slide-in-left{0%{transform:translateX(-75px);opacity:.5}100%{transform:translateX(0);opacity:1}}
+
+.navbar {
+    overflow: hidden;
+    height: 75px;
+    padding: 0 0 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.navbar ul, .navbar ul li a {
+    font-size: 15px;
+    color: black;
+    display: flex;
+    padding: .25rem .5rem;
+}
+
+.navbar li:hover {
+    font-weight: 500;
+}
+
+.navlinks, .user {
+    align-items: center;
+    display: flex;
+}
+
+.navlinks p:first-child, .user p:first-child {
+    font-weight: bolder;
+}
+
+.navlinks .logo {
+    user-select: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+    font-family: 'Pacifico', cursive;
+}
+
+.menu {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    background-color: rgb(243, 243, 243);
+    height: 100vh;
+    width: 100%;
+    animation:fade-in-bck .6s cubic-bezier(.39,.575,.565,1.000) both
+}
+
+.user p {
+    padding: .5rem;
+}
+.items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.items ul, .items li {
+    color: black;
+    margin: 0;
+    padding: 1rem 0;
+}
+
+.useroverlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    width: 100%;
+    gap: 1rem;
+    height: 100px;
+}
+
+.useroverlay p {
+    margin: 0;
+    border: 1px solid rgba(0, 0, 0, 0.25);;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.useroverlay p:hover, .useroverlay p:focus, .useroverlay p:active {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.userlogout:hover, .userlogout:focus, .userlogout:active {
+    background-color: rgb(255, 104, 104) !important;
+}
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.userinfo > span:first-child {
+    font-weight: 500;
+}
+
+.userinfo > span:last-child {
+    font-size: 15px;
+}
+
+.usercontainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navuser {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    height: 75px;
+    border-left: 1px solid rgba(0, 0, 0, 0.25);
+    animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both
+}
+
+.navuserfocused {
+    animation:slide-in-right .5s cubic-bezier(.25,.46,.45,.94) both;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    height: 75px;
+    border-left: 1px solid rgba(0, 0, 0, 0.25); 
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.navuser:hover, .navuser:focus, .navuser:active {
+    background-color: rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.useraside { display: flex; }
+
+.hidden { display: none; }
+
+.userpopup {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 2rem;
+    background-color: rgb(240, 240, 240);
+    height: 75px;
+    animation:slide-in-right .5s cubic-bezier(.25,.46,.45,.94) both
+}
+
+.userpopup > span:first-child {
+    font-weight: 500;
+}
+
+.userpopup > span:last-child {
+    font-size: 15px;
+}
+
+.logoutbtn {
+    background-color: rgb(255, 104, 104);
+    cursor: pointer;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    animation:slide-in-right .5s cubic-bezier(.25,.46,.45,.94) both
+}
+
+.logoutbtn:hover, .logoutbtn:focus, .logoutbtn:active {
+    background-color: rgb(255, 79, 79);
+}
+
+@media screen and (max-width: 1050px) {
+    .links { display: none; }
+    .user { display: none; }
+    .menu {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 3rem;
+        height: 3rem;
+        border: 0;
+        background: transparent;
+        gap: .65rem;
+        padding-right: 1rem;
+    }
+    
+    .menu > span {
+        background: black;
+        height: 2px;
+        width: 100%;
+        transition: all .5s;
+        transform-origin: left;
+    }
+    
+    .rotate {
+        transform: rotate(32deg);
+    }
+    
+    .opacity0 {
+        opacity: 0;
+    }
+    
+    .rotateminus {
+        transform: rotate(-32deg);
+    }
+}
